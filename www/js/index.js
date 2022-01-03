@@ -111,6 +111,7 @@ function mostrar_vaga(){
   $("#h_matricula").text(`Matricula do carro: ${info_reserva.matricula_carro}`)
   $("#h_marca").text(`Marca do carro: ${info_reserva.marca_carro}`)
   $("#h_data").text(`Data de reserva: ${info_reserva.data_reserva}`)
+  $("#h_numero_hora").text(`Número de horas: ${info_reserva.numero_horas}`)
   $("#h_total").text(`Total a pagar: ${info_reserva.total_pagar} AOA`)
 
   listar_vagas()
