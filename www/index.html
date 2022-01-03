@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport"
+		content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+	<title>EstaAPP</title>
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="lib/jquery-mobile/css/jquery.mobile-1.4.5.min.css" />
+	<script type="text/javascript" src="lib/jquery-mobile/js/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-mobile-router/js/jquery.mobile.router.min.js"></script>
+	<script type="text/javascript" src="lib/jquery-mobile/js/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+
+	<section data-role="page" id="pg_inicial">
+		<header data-role="header" data-position="fixed">
+			<h1>EstaAPP</h1>
+		</header>
+
+		<main role="main" class="ui-content" id="home-content">
+			<h2>Seja bem vindo ao aplicativo.</h2>
+			<p>
+				Faça as suas reservas de lugar de estacionamento de uma farma fácil e segura,
+				no conforto da sua casa utilizando o seu telefone.
+			</p>
+			<center>
+				<img src="img/logo-icon.d76fb493.png" width="100" alt="">
+			</center>
+		</main>
+
+		<footer data-role="footer" data-position="fixed">
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#pg_lugar_livre" data-icon="location">Lugares Livres</a></li>
+					<li><a href="#pg_ver_vaga" data-icon="navigation">Ver Vaga Reservada</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+
+	<section data-role="page" id="pg_lugar_livre">
+		<header data-role="header">
+			<h1>Lugares livres</h1>
+		</header>
+
+		<main role="main" class="ui-content">
+			<h4 id="teste">Encontre aqui os lugares disponíveis para reserver</h4>
+
+			<ul data-role="listview" data-inset="true" id="lista_vagas">
+			</ul>
+		</main>
+
+		<footer data-role="footer" data-position="fixed">
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#pg_inicial" data-icon="home">Início</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+
+	<section data-role="page" id="pg_reservar_lugar">
+		<header data-role="header">
+			<h1>Reservar Lugar</h1>
+		</header>
+
+		<main data-role="main" class="ui-content">
+
+			<h4>Insira as suas informações para reservar uma vaga</h4>
+
+			<h4 id="lugar_reserva"></h4>
+			<h4 id="lugar_reserva_preco"></h4>
+
+			<form id="form_reserva">
+				<hr>
+				<h3>informações do Cliente</h3>
+
+				<label for="nome_cliente">Nome: </label>
+				<input required type='text' id='nome_cliente' name='nome_cliente' autofocus
+					placeholder='Nome do Cliente' />
+
+				<label for="telefone_cliente">Número de Telefone: </label>
+				<input required type='tel' id='telefone_cliente' name='telefone_cliente'
+					placeholder='Telefone do Cliente' />
+
+				<hr>
+
+				<h3>Informações do Carro</h3>
+
+				<label for="matricula_carro">Nº de Matrícula: </label>
+				<input required type='text' id='matricula_carro' name='matricula_carro' placeholder='Nº Matrícula' />
+
+				<label for="marca_carro">Marca do carro: </label>
+				<input required type='text' id='marca_carro' name='marca_carro' placeholder='Marca do Carro' />
+
+				<label for="cor_carro">Cor do carro: </label>
+				<input required type='color' id='cor_carro' name='cor_carro' placeholder='Cor do Carro' />
+
+				<label for="data_reserva">Data de reserva: </label>
+				<input required type='date' id='data_reserva' name='data_reserva' placeholder='Data de reserva' />
+
+				<label for="numero_horas">Número de Horas: </label>
+				<input required type='number' id='numero_horas' name='numero_horas' placeholder='Número de Horas' />
+
+				<button type="submit" data-role="button">Reservar</button>
+			</form>
+		</main>
+
+		<footer data-role="footer" data-position="fixed">
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#pg_inicial" data-icon="home">Página Inicial</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+
+	<section data-role="page" id="pg_ver_vaga">
+		<header data-role="header">
+			<h1>Lugar Reservado</h1>
+		</header>
+
+		<main role="main" class="ui-content">
+			<h4 id="h_nome">Sem Informação</h4>
+			<h4 id="h_matricula">Sem Informação</h4>
+			<h4 id="h_marca">Sem Informação</h4>
+			<h4 id="h_data">Sem Informação</h4>
+			<h4 id="h_total">Sem Informação</h4>
+		</main>
+
+		<footer data-role="footer" data-position="fixed">
+			<nav data-role="navbar">
+				<ul>
+					<li><a href="#pg_inicial" data-icon="home">Início</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</section>
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript">
+		appestaciona.app.initialize();
+	</script>
+
+</body>
+
+</html>
